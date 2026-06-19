@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' hide Response;
-import '../config/api_config.dart';
+import '../configs/api_config.dart';
 import 'storage_service.dart';
 
 class ApiService extends GetxService {

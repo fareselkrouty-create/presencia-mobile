@@ -12,17 +12,12 @@ class LoginScreen extends StatelessWidget {
     final controller = Get.find<AuthController>();
     final theme      = Theme.of(context);
 
-    final matriculeCtrl = TextEditingController();
-    final passwordCtrl  = TextEditingController();
-    final formKey       = GlobalKey<FormState>();
-    final obscure       = true.obs;
-
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Form(
-            key: formKey,
+            key: controller.loginFormKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -55,7 +50,7 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   'Connectez-vous pour pointer',
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: theme.colorScheme.onSurface.withOpacity(0.5),
+                    color: theme.colorScheme.onSurface.withValues(alpha:0.5),
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -64,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                 CustomInput(
                   label: 'Matricule',
                   hint: 'Ex : EMP-001',
-                  controller: matriculeCtrl,
+                  controller: controller.matriculeCtrl,
                   prefixIcon: Icons.badge_outlined,
                   validator: (v) =>
                   v == null || v.isEmpty ? 'Champ requis' : null,
@@ -75,19 +70,19 @@ class LoginScreen extends StatelessWidget {
                 Obx(() => CustomInput(
                   label: 'Mot de passe',
                   hint: '••••••••',
-                  controller: passwordCtrl,
-                  obscureText: obscure.value,
+                  controller: controller.passwordCtrl,
+                  obscureText: controller.obscurePassword.value,
                   prefixIcon: Icons.lock_outline,
                   validator: (v) =>
                   v == null || v.isEmpty ? 'Champ requis' : null,
                   suffixWidget: GestureDetector(
-                    onTap: () => obscure.toggle(),
+                    onTap: () => controller.obscurePassword.toggle(),
                     child: Icon(
-                      obscure.value
+                      controller.obscurePassword.value
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
                       size: 20,
-                      color: theme.colorScheme.onSurface.withOpacity(0.4),
+                      color: theme.colorScheme.onSurface.withValues(alpha:0.4),
                     ),
                   ),
                 )),
@@ -98,10 +93,10 @@ class LoginScreen extends StatelessWidget {
                   label: 'Se connecter',
                   isLoading: controller.isLoading.value,
                   onPressed: () {
-                    if (formKey.currentState!.validate()) {
+                    if (controller.loginFormKey.currentState!.validate()) {
                       controller.login(
-                        matriculeCtrl.text.trim(),
-                        passwordCtrl.text.trim(),
+                        controller.matriculeCtrl.text.trim(),
+                        controller.passwordCtrl.text.trim(),
                       );
                     }
                   },

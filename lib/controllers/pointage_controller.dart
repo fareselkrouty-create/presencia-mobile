@@ -1,13 +1,11 @@
 import 'package:get/get.dart';
 import '../models/pointage_model.dart';
 import '../services/api_service.dart';
-import '../services/storage_service.dart';
-import '../components/app_snackbar.dart';
-import '../config/api_config.dart';
+import '../components/app_snakbar.dart';
+import '../configs/api_config.dart';
 
 class PointageController extends GetxController {
   final _api = Get.find<ApiService>();
-  final _storage = Get.find<StorageService>();
 
   final isLoading       = false.obs;
   final isCheckedIn     = false.obs;
@@ -24,7 +22,7 @@ class PointageController extends GetxController {
   Future<void> fetchStatutAujourdhui() async {
     try {
       isLoading(true);
-      final data = await _api.get(ApiConfig.pointageById + '/today');
+      final data = await _api.get('${ApiConfig.pointageById}/today');
       final pointage = PointageModel.fromJson(data);
       pointageAujourdhui(pointage);
       isCheckedIn(pointage.heureSortie == null && pointage.heureEntree != null);

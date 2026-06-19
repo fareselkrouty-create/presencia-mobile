@@ -1,3 +1,5 @@
+import 'constants.dart';
+
 class Validators {
   Validators._();
 
@@ -37,6 +39,3 @@ class Validators {
         return null;
       };
 }
-
-// Import manquant dans ce fichier
-import 'constants.dart';

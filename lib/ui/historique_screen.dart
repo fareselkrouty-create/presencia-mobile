@@ -38,12 +38,12 @@ class HistoriqueScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 10),
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.surfaceVariant
-                            .withOpacity(0.4),
+                        color: theme.colorScheme.surfaceContainerHighest
+                            .withValues(alpha:0.4),
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                           color:
-                          theme.colorScheme.outline.withOpacity(0.15),
+                          theme.colorScheme.outline.withValues(alpha:0.15),
                         ),
                       ),
                       child: Row(
@@ -103,13 +103,13 @@ class HistoriqueScreen extends StatelessWidget {
                       children: [
                         Icon(Icons.inbox_outlined,
                             size: 48,
-                            color: theme.colorScheme.onSurface.withOpacity(0.3)),
+                            color: theme.colorScheme.onSurface.withValues(alpha:0.3)),
                         const SizedBox(height: 12),
                         Text(
                           'Aucun pointage ce mois-ci',
                           style: TextStyle(
                             color:
-                            theme.colorScheme.onSurface.withOpacity(0.4),
+                            theme.colorScheme.onSurface.withValues(alpha:0.4),
                           ),
                         ),
                       ],
@@ -175,7 +175,7 @@ class _MiniStat extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.08),
+          color: color.withValues(alpha:0.08),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
@@ -190,7 +190,7 @@ class _MiniStat extends StatelessWidget {
             ),
             Text(
               label,
-              style: TextStyle(fontSize: 11, color: color.withOpacity(0.8)),
+              style: TextStyle(fontSize: 11, color: color.withValues(alpha:0.8)),
             ),
           ],
         ),

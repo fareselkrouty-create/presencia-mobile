@@ -40,7 +40,7 @@ class CustomInput extends StatelessWidget {
           style: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w500,
-            color: theme.colorScheme.onSurface.withOpacity(0.7),
+            color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
           ),
         ),
         const SizedBox(height: 6),
@@ -56,12 +56,12 @@ class CustomInput extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: TextStyle(
-              color: theme.colorScheme.onSurface.withOpacity(0.35),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.35),
             ),
             prefixIcon: prefixIcon != null ? Icon(prefixIcon, size: 20) : null,
             suffix: suffixWidget,
             filled: true,
-            fillColor: theme.colorScheme.surfaceVariant.withOpacity(0.4),
+            fillColor: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.4),
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
               vertical: 14,
@@ -73,7 +73,7 @@ class CustomInput extends StatelessWidget {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(
-                color: theme.colorScheme.outline.withOpacity(0.2),
+                color: theme.colorScheme.outline.withValues(alpha: 0.2),
               ),
             ),
             focusedBorder: OutlineInputBorder(

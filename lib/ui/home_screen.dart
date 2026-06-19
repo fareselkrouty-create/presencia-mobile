@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                           Text(
                             DateFormat('EEEE d MMMM', 'fr').format(now),
                             style: theme.textTheme.bodySmall?.copyWith(
-                              color: theme.colorScheme.onSurface.withOpacity(0.5),
+                              color: theme.colorScheme.onSurface.withValues(alpha:0.5),
                             ),
                           ),
                         ],
@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                       final user = authCtrl.currentUser.value;
                       return CircleAvatar(
                         radius: 22,
-                        backgroundColor: theme.colorScheme.primary.withOpacity(0.12),
+                        backgroundColor: theme.colorScheme.primary.withValues(alpha:0.12),
                         child: Text(
                           user != null
                               ? '${user.prenom[0]}${user.nom[0]}'.toUpperCase()
@@ -170,7 +170,7 @@ class HomeScreen extends StatelessWidget {
                       child: Text(
                         'Aucun pointage ce mois-ci',
                         style: TextStyle(
-                          color: theme.colorScheme.onSurface.withOpacity(0.4),
+                          color: theme.colorScheme.onSurface.withValues(alpha:0.4),
                         ),
                       ),
                     );
@@ -255,9 +255,9 @@ class _StatCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 14),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.08),
+          color: color.withValues(alpha:0.08),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color.withOpacity(0.2)),
+          border: Border.all(color: color.withValues(alpha:0.2)),
         ),
         child: Column(
           children: [
@@ -272,7 +272,7 @@ class _StatCard extends StatelessWidget {
             const SizedBox(height: 2),
             Text(
               label,
-              style: TextStyle(fontSize: 11, color: color.withOpacity(0.8)),
+              style: TextStyle(fontSize: 11, color: color.withValues(alpha:0.8)),
             ),
           ],
         ),

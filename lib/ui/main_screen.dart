@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
         onDestinationSelected: (i) => currentIndex(i),
         backgroundColor: theme.colorScheme.surface,
         elevation: 0,
-        indicatorColor: theme.colorScheme.primary.withOpacity(0.12),
+        indicatorColor: theme.colorScheme.primary.withValues(alpha:0.12),
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),

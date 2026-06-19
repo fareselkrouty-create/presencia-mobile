@@ -27,7 +27,7 @@ class PointageCard extends StatelessWidget {
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: theme.colorScheme.outline.withOpacity(0.12),
+          color: theme.colorScheme.outline.withValues(alpha:0.12),
         ),
       ),
       child: Row(
@@ -37,7 +37,7 @@ class PointageCard extends StatelessWidget {
             width: 48,
             padding: const EdgeInsets.symmetric(vertical: 8),
             decoration: BoxDecoration(
-              color: theme.colorScheme.primary.withOpacity(0.08),
+              color: theme.colorScheme.primary.withValues(alpha:0.08),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(

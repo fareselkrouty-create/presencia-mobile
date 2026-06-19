@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/pointage_controller.dart';
-import '../components/custom_button.dart';
 
 class CheckinScreen extends StatelessWidget {
   const CheckinScreen({super.key});
@@ -29,7 +28,7 @@ class CheckinScreen extends StatelessWidget {
               Text(
                 'Votre position GPS sera enregistrée',
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: theme.colorScheme.onSurface.withOpacity(0.5),
+                  color: theme.colorScheme.onSurface.withValues(alpha:0.5),
                 ),
               ),
               const SizedBox(height: 50),
@@ -53,7 +52,7 @@ class CheckinScreen extends StatelessWidget {
                         color: (controller.isCheckedIn.value
                             ? const Color(0xFFC62828)
                             : theme.colorScheme.primary)
-                            .withOpacity(0.3),
+                            .withValues(alpha:0.3),
                         blurRadius: 30,
                         spreadRadius: 8,
                       ),
@@ -102,7 +101,7 @@ class CheckinScreen extends StatelessWidget {
                   Container(
                     width: 1,
                     height: 50,
-                    color: theme.colorScheme.outline.withOpacity(0.15),
+                    color: theme.colorScheme.outline.withValues(alpha:0.15),
                   ),
                   _InfoHeure(
                     label: 'Sortie',
@@ -195,7 +194,7 @@ class _InfoHeure extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: 12,
-            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+            color: Theme.of(context).colorScheme.onSurface.withValues(alpha:0.5),
           ),
         ),
       ],

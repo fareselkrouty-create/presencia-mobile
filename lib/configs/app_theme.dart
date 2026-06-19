@@ -16,10 +16,9 @@ class AppTheme {
       error: _errorColor,
       brightness: Brightness.light,
       surface: Colors.white,
-      background: const Color(0xFFF8F9FB),
     ),
     scaffoldBackgroundColor: const Color(0xFFF8F9FB),
-    fontFamily: 'Inter',
+    // fontFamily: 'Inter', // TODO: ajouter la font Inter dans pubspec.yaml si nécessaire
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       elevation: 0,
@@ -27,13 +26,13 @@ class AppTheme {
       centerTitle: false,
       iconTheme: IconThemeData(color: Color(0xFF1A1A2E)),
       titleTextStyle: TextStyle(
-        fontFamily: 'Inter',
+        // fontFamily: 'Inter', // TODO: ajouter la font Inter dans pubspec.yaml si nécessaire
         fontSize: 18,
         fontWeight: FontWeight.w600,
         color: Color(0xFF1A1A2E),
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 0,
       color: Colors.white,
       shape: RoundedRectangleBorder(
@@ -68,23 +67,22 @@ class AppTheme {
       error: _errorColor,
       brightness: Brightness.dark,
       surface: const Color(0xFF1E1E2A),
-      background: const Color(0xFF13131C),
     ),
     scaffoldBackgroundColor: const Color(0xFF13131C),
-    fontFamily: 'Inter',
+    // fontFamily: 'Inter', // TODO: ajouter la font Inter dans pubspec.yaml si nécessaire
     appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xFF1E1E2A),
       elevation: 0,
       scrolledUnderElevation: 0.5,
       centerTitle: false,
       titleTextStyle: TextStyle(
-        fontFamily: 'Inter',
+        // fontFamily: 'Inter', // TODO: ajouter la font Inter dans pubspec.yaml si nécessaire
         fontSize: 18,
         fontWeight: FontWeight.w600,
         color: Colors.white,
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 0,
       color: const Color(0xFF1E1E2A),
       shape: RoundedRectangleBorder(

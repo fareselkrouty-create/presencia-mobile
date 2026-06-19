@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
-import '../controllers/auth_controller.dart';
 import '../controllers/pointage_controller.dart';
 import '../controllers/historique_controller.dart';
 import '../controllers/profile_controller.dart';
 import '../ui/login_screen.dart';
-import '../ui/home_screen.dart';
 import '../ui/checkin_screen.dart';
+import '../ui/main_screen.dart';
 import '../ui/historique_screen.dart';
 import '../ui/profile_screen.dart';
 
@@ -28,9 +27,6 @@ class AppPages {
     GetPage(
       name: Routes.login,
       page: () => const LoginScreen(),
-      binding: BindingsBuilder(() {
-        Get.lazyPut(() => AuthController());
-      }),
     ),
     // GetPage(
     //   name: Routes.home,

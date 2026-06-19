@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../config/app_routes.dart';
+import '../configs/app_routes.dart';
 import '../models/user_model.dart';
 import '../services/auth_service.dart';
 import '../services/storage_service.dart';
-import '../components/app_snackbar.dart';
+import '../components/app_snakbar.dart';
 
 class AuthController extends GetxController {
   final _authService = Get.find<AuthService>();
@@ -12,10 +13,23 @@ class AuthController extends GetxController {
   final isLoading = false.obs;
   final currentUser = Rxn<UserModel>();
 
+  // Formulaire login
+  final matriculeCtrl = TextEditingController();
+  final passwordCtrl  = TextEditingController();
+  final loginFormKey  = GlobalKey<FormState>();
+  final obscurePassword = true.obs;
+
   @override
   void onInit() {
     super.onInit();
     _checkSession();
+  }
+
+  @override
+  void onClose() {
+    matriculeCtrl.dispose();
+    passwordCtrl.dispose();
+    super.onClose();
   }
 
   void _checkSession() {

@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import '../models/pointage_model.dart';
 import '../services/api_service.dart';
-import '../components/app_snackbar.dart';
-import '../config/api_config.dart';
+import '../components/app_snakbar.dart';
+import '../configs/api_config.dart';
 
 class HistoriqueController extends GetxController {
   final _api = Get.find<ApiService>();

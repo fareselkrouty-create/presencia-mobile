@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter pub:*)",
+      "Bash(flutter analyze:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(dart compile:*)"
+    ]
+  }
+}
